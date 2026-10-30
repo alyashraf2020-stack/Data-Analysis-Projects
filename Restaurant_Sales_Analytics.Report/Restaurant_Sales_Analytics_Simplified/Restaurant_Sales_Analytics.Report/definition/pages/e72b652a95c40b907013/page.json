@@ -1,0 +1,683 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e72b652a95c40b907013",
+  "displayName": "Executive Overview",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#303052'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Restaurant Sales Dashboard Wallpaper.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Restaurant_Sales_Dashboard_Wal6068081718622513.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "ov_s_year",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_year",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_month",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_branch",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_category",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_type",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_payment",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_s_date",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_trend",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_category_sales",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_branch_sales",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_top_items",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_weekend",
+      "target": "ov_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_revenue",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_orders",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_aov",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_category_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_branch_sales",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_top_items",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ov_order_type",
+      "target": "ov_weekend",
+      "type": "DataFilter"
+    }
+  ]
+}

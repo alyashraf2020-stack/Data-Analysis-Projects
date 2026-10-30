@@ -1,0 +1,60 @@
+// Read-only verification queries for the simplified project.
+// These queries are supplied for Desktop execution; they have not been executed in this session.
+EVALUATE
+ROW(
+    "Revenue",[Total Revenue],
+    "Orders - existing transaction definition",[Total Orders],
+    "Quantity",[Total Quantity Sold],
+    "Customers",[Unique Customers],
+    "Rating",[Average Customer Rating]
+)
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    'resturant_final'[branch],
+    "Revenue",[Total Revenue],
+    "Orders",[Total Orders]
+)
+ORDER BY [Revenue] DESC
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    'resturant_final'[category],
+    "Revenue",[Total Revenue],
+    "Quantity",[Total Quantity Sold]
+)
+ORDER BY [Revenue] DESC
+
+EVALUATE
+FILTER(
+    SUMMARIZECOLUMNS(
+        'resturant_final'[item_name],
+        "Revenue",[Total Revenue],
+        "Revenue Rank",[Menu Item Revenue Rank],
+        "Quantity",[Total Quantity Sold],
+        "Quantity Rank",[Menu Item Quantity Rank]
+    ),
+    [Revenue Rank] <= 10
+)
+ORDER BY [Revenue Rank], 'resturant_final'[item_name]
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    'resturant_final'[order_type],
+    "Revenue",[Total Revenue],
+    "Orders",[Total Orders]
+)
+ORDER BY [Revenue] DESC
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Calendar'[Year],
+    'Calendar'[Month-Year],
+    'Calendar'[Year-Month Sort Key],
+    "Revenue",[Total Revenue],
+    "Previous Month",[Previous Month Sales],
+    "Previous Year",[Previous Year Sales],
+    "MoM",[Month-over-Month Growth %],
+    "YoY",[Year-over-Year Growth %]
+)
+ORDER BY 'Calendar'[Year-Month Sort Key]

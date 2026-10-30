@@ -1,0 +1,89 @@
+{
+  "name": "RestaurantMidnight",
+  "dataColors": [
+    "#3EA6E0",
+    "#8155EF",
+    "#94D7F2",
+    "#5369C9",
+    "#36C7BE",
+    "#C09AFF",
+    "#F2BB66",
+    "#EC789D"
+  ],
+  "background": "#211F4A",
+  "foreground": "#F4F6FF",
+  "tableAccent": "#3EA6E0",
+  "firstLevelElements": "#F4F6FF",
+  "secondLevelElements": "#CBD1E8",
+  "thirdLevelElements": "#43456A",
+  "fourthLevelElements": "#AAB3D1",
+  "secondaryBackground": "#303052",
+  "good": "#36C7BE",
+  "neutral": "#F2BB66",
+  "bad": "#EC789D",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#F4F6FF"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#F4F6FF"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#CBD1E8"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#F4F6FF"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#211F4A"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#F4F6FF"
+              }
+            },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#303052"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

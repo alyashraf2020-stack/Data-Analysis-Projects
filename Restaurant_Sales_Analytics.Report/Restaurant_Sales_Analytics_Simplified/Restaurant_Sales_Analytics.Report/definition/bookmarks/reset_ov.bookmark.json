@@ -1,0 +1,507 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Reset filters • Executive Overview",
+  "name": "reset_ov",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "ov_s_year",
+      "ov_s_month",
+      "ov_s_branch",
+      "ov_s_category",
+      "ov_s_type",
+      "ov_s_payment",
+      "ov_s_date",
+      "ov_revenue",
+      "ov_orders",
+      "ov_aov",
+      "ov_rating",
+      "ov_trend",
+      "ov_category_sales",
+      "ov_branch_sales",
+      "ov_top_items",
+      "ov_weekend",
+      "ov_order_type",
+      "sa_s_year",
+      "sa_s_month",
+      "sa_s_branch",
+      "sa_s_category",
+      "sa_s_type",
+      "sa_s_payment",
+      "sa_s_date",
+      "sa_mtd",
+      "sa_qtd",
+      "sa_ytd",
+      "sa_rolling",
+      "sa_comparison",
+      "sa_growth",
+      "sa_category_detail",
+      "sa_top_quantity",
+      "co_s_year",
+      "co_s_month",
+      "co_s_branch",
+      "co_s_category",
+      "co_s_type",
+      "co_s_payment",
+      "co_s_date",
+      "co_customers",
+      "co_frequency",
+      "co_spend",
+      "co_rating",
+      "co_customer_trend",
+      "co_payment",
+      "co_order_type",
+      "co_branch_detail",
+      "co_satisfaction"
+    ],
+    "suppressActiveSection": true,
+    "suppressDisplay": true
+  },
+  "explorationState": {
+    "version": "1.0",
+    "activeSection": "e72b652a95c40b907013",
+    "sections": {
+      "e72b652a95c40b907013": {
+        "visualContainers": {
+          "ov_s_year": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_branch": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_category": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_type": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_payment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_s_date": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ov_revenue": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "ov_orders": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "ov_aov": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "ov_rating": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "ov_trend": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            }
+          },
+          "ov_category_sales": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            }
+          },
+          "ov_branch_sales": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            }
+          },
+          "ov_top_items": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            }
+          },
+          "ov_weekend": {
+            "singleVisual": {
+              "visualType": "donutChart"
+            }
+          },
+          "ov_order_type": {
+            "singleVisual": {
+              "visualType": "donutChart"
+            }
+          }
+        }
+      },
+      "sales_analysis": {
+        "visualContainers": {
+          "sa_s_year": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_branch": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_category": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_type": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_payment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_s_date": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sa_mtd": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "sa_qtd": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "sa_ytd": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "sa_rolling": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "sa_comparison": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            }
+          },
+          "sa_growth": {
+            "singleVisual": {
+              "visualType": "clusteredColumnChart"
+            }
+          },
+          "sa_category_detail": {
+            "singleVisual": {
+              "visualType": "tableEx"
+            }
+          },
+          "sa_top_quantity": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            }
+          }
+        }
+      },
+      "customer_operations": {
+        "visualContainers": {
+          "co_s_year": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_branch": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_category": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_type": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_payment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_s_date": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {}
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "co_customers": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "co_frequency": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "co_spend": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "co_rating": {
+            "singleVisual": {
+              "visualType": "card"
+            }
+          },
+          "co_customer_trend": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            }
+          },
+          "co_payment": {
+            "singleVisual": {
+              "visualType": "donutChart"
+            }
+          },
+          "co_order_type": {
+            "singleVisual": {
+              "visualType": "donutChart"
+            }
+          },
+          "co_branch_detail": {
+            "singleVisual": {
+              "visualType": "tableEx"
+            }
+          },
+          "co_satisfaction": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["resturant_final"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table resturant_final
+ref table Calendar
+ref table _Measures
+
+ref cultureInfo en-US
+

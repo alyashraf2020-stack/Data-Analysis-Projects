@@ -1,0 +1,536 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "sales_analysis",
+  "displayName": "Sales Analysis",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#303052'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Restaurant Sales Dashboard Wallpaper.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Restaurant_Sales_Dashboard_Wal08651016945700851.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "border": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "foregroundColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "filterCard": [
+      {
+        "properties": {
+          "border": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "backgroundColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "Available"
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "sa_s_year",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_year",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_month",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_branch",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_category",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_type",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_payment",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_s_date",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_comparison",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_growth",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_category_detail",
+      "target": "sa_top_quantity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_mtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_qtd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_ytd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_rolling",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_comparison",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_growth",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sa_top_quantity",
+      "target": "sa_category_detail",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "resturant_final.branch": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "resturant_final",
+			          "ConceptualProperty": "branch"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Branch": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "resturant_final.category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "resturant_final",
+			          "ConceptualProperty": "category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "resturant_final.order_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "resturant_final",
+			          "ConceptualProperty": "order_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Order Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "resturant_final.payment_method": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "resturant_final",
+			          "ConceptualProperty": "payment_method"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Payment Method": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "resturant_final.item_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "resturant_final",
+			          "ConceptualProperty": "item_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Menu Item": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

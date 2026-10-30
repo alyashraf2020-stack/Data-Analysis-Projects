@@ -1,0 +1,241 @@
+table _Measures
+	lineageTag: 3b310491-0082-479a-ac93-0b86ab4f5648
+
+	/// Sum of additive net transaction amounts. Discount fractions and rounding were audited. Negative source transactions are retained.
+	measure 'Total Revenue' = SUM('resturant_final'[total_amount])
+		formatString: #,0.00
+		displayFolder: '01 Sales'
+		lineageTag: e82f75eb-25e5-41f7-a038-88d9d4d987cf
+
+	/// Counts transaction records after the grain audit checks the uniqueness of order_id + order_date + branch + customer_id + hour. Source order_id is reused across unrelated transactions and must not be counted alone. This signature is an observed transaction key, not a source-provided global order identifier.
+	measure 'Total Orders' = COUNTROWS('resturant_final')
+		formatString: #,0
+		displayFolder: '01 Sales'
+		lineageTag: 45f10c7f-eb98-40b9-8511-1dcf237a4d91
+
+	/// Diagnostic only: source IDs are reused and this count understates transactions.
+	measure 'Distinct Source Order IDs' = DISTINCTCOUNT('resturant_final'[order_id])
+		formatString: #,0
+		displayFolder: '99 Data Quality'
+		lineageTag: 98a17f2d-fcb6-464c-b7d8-ccd321fcb177
+
+	/// Sum of source transaction quantities; valid negative financial transactions are retained.
+	measure 'Total Quantity Sold' = SUM('resturant_final'[quantity])
+		formatString: #,0
+		displayFolder: '01 Sales'
+		lineageTag: c71e525b-85c4-44f1-95ff-11b3d3e398c7
+
+	/// Net revenue per observed transaction record, based on the audited transaction signature.
+	measure 'Average Order Value' = DIVIDE([Total Revenue],[Total Orders])
+		formatString: #,0.00
+		displayFolder: '01 Sales'
+		lineageTag: cbac0abc-3f64-49e6-ab10-5970ce8e09e4
+
+	/// Gross value computed using the stored, rounded unit prices.
+	measure 'Gross Sales at Listed Price' = SUMX('resturant_final','resturant_final'[price]*'resturant_final'[quantity])
+		formatString: #,0.00
+		isHidden
+		displayFolder: '01 Sales'
+		lineageTag: 442da4c3-1ff5-47b0-85e2-b1976092b97c
+
+	/// Quantity-weighted listed unit price before discounts; includes negative source prices.
+	measure 'Average Item Price' = DIVIDE([Gross Sales at Listed Price],[Total Quantity Sold])
+		formatString: #,0.00
+		displayFolder: '01 Sales'
+		lineageTag: 7dedb39e-0f71-4ec5-ba2a-4ef96eb950fc
+
+	/// Estimated discount amount: stored listed unit price times quantity times discount fraction. Source discount values are 0 or 0.10. Price rounding means this is a reconstruction, not an exact source monetary-discount field.
+	measure 'Total Discounts' = SUMX('resturant_final','resturant_final'[price]*'resturant_final'[quantity]*'resturant_final'[discount])
+		formatString: #,0.00
+		displayFolder: '01 Sales'
+		lineageTag: 326cce52-3058-4f05-a389-f7053c6e3ec6
+
+	/// Difference due to source rounding of unit prices and net amounts. This is a diagnostic, not a balancing adjustment.
+	measure 'Revenue Rounding Difference' = [Gross Sales at Listed Price]-[Total Discounts]-[Total Revenue]
+		formatString: #,0.00
+		displayFolder: '99 Data Quality'
+		lineageTag: 57e27b1a-3abd-4426-979e-bdcec9cfb7ce
+
+	/// Distinct known source customer IDs in current filter context.
+	measure 'Unique Customers' = DISTINCTCOUNTNOBLANK('resturant_final'[customer_id])
+		formatString: #,0
+		displayFolder: '02 Customers'
+		lineageTag: 4f7d9588-41f0-47a9-9eeb-53e77a23370d
+
+	measure 'Identified Customer Orders' = CALCULATE([Total Orders],KEEPFILTERS(NOT ISBLANK('resturant_final'[customer_id])))
+		formatString: #,0
+		isHidden
+		displayFolder: '02 Customers'
+		lineageTag: 05e3ef11-6b33-4cd6-a156-32f746bb9dd6
+
+	measure 'Identified Customer Revenue' = CALCULATE([Total Revenue],KEEPFILTERS(NOT ISBLANK('resturant_final'[customer_id])))
+		formatString: #,0.00
+		isHidden
+		displayFolder: '02 Customers'
+		lineageTag: 096bd337-d5c1-402d-8682-9a17a5eab158
+
+	measure 'Average Orders per Customer' = DIVIDE([Identified Customer Orders],[Unique Customers])
+		formatString: #,0.00
+		displayFolder: '02 Customers'
+		lineageTag: 71539b05-403b-40e8-90be-cd82646c789b
+
+	/// Net revenue from identified customers divided by distinct identified customers.
+	measure 'Average Customer Spend' = DIVIDE([Identified Customer Revenue],[Unique Customers])
+		formatString: #,0.00
+		displayFolder: '02 Customers'
+		lineageTag: d3593e99-8704-4acd-ac03-b6cf96c37f20
+
+	/// Average rating per audited transaction record, on the observed 1 to 5 source scale. Reused source IDs are not treated as one rating event.
+	measure 'Average Customer Rating' = AVERAGE('resturant_final'[rating])
+		formatString: 0.00
+		displayFolder: '03 Operations'
+		lineageTag: 4090f7d7-16ff-4408-a360-32c8bd0182e1
+
+	measure 'Rated Orders' = COUNT('resturant_final'[rating])
+		formatString: #,0
+		displayFolder: '03 Operations'
+		lineageTag: 8911f186-9c1a-4f39-8472-8c887488e5d5
+
+	/// Total Revenue evaluated in the dimension and slicer context.
+	measure 'Revenue by Branch' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 0d6ba20c-1d3b-407d-b668-637b1ab76de4
+
+	/// Total Revenue evaluated in the dimension and slicer context.
+	measure 'Revenue by Category' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: da6bf399-55b3-428c-88b1-0b84d050005d
+
+	/// Total Revenue evaluated in the dimension and slicer context.
+	measure 'Revenue by Menu Item' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 28c0639c-5278-4436-8e90-926ad9692c47
+
+	/// Total Revenue evaluated in the dimension and slicer context.
+	measure 'Revenue by Payment Method' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: b568a020-9ca7-4209-8c51-365434be18e0
+
+	/// Total Revenue evaluated in the dimension and slicer context.
+	measure 'Revenue by Order Type' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 9504fde3-33ae-4c64-bbd4-f9d9245e5bec
+
+	/// Friday, Saturday, Sunday according to observed source is_weekend flags.
+	measure 'Weekend Sales' = CALCULATE([Total Revenue],KEEPFILTERS('Calendar'[Day Type]="Weekend"))
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 85c6f247-ae98-4edf-9fe8-964ea75655b7
+
+	/// Monday through Thursday according to observed source flags.
+	measure 'Weekday Sales' = CALCULATE([Total Revenue],KEEPFILTERS('Calendar'[Day Type]="Weekday"))
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 3cbca9a6-2974-4b8b-b2bd-c9abf830dc2b
+
+	/// Use Calendar Day Type as chart legend.
+	measure 'Weekend vs Weekday Sales' = [Total Revenue]
+		formatString: #,0.00
+		displayFolder: '03 Operations'
+		lineageTag: 99d82ce5-1430-47cd-9557-cc449c0509cf
+
+	/// Month to date through the selected period end capped at the latest source date; other business dimensions remain filtered.
+	measure 'Sales MTD' = VAR Anchor = MIN(MAX('Calendar'[Date]),[Last Available Order Date]) RETURN CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],DATE(YEAR(Anchor),MONTH(Anchor),1),Anchor))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: d8cb21e3-9a3a-41db-8506-58b392efb114
+
+	measure 'Sales QTD' = VAR Anchor = MIN(MAX('Calendar'[Date]),[Last Available Order Date]) VAR StartMonth=3*INT((MONTH(Anchor)-1)/3)+1 RETURN CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],DATE(YEAR(Anchor),StartMonth,1),Anchor))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: a89ee679-8af5-4765-8853-7de8f22ccea4
+
+	measure 'Sales YTD' = VAR Anchor = MIN(MAX('Calendar'[Date]),[Last Available Order Date]) RETURN CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],DATE(YEAR(Anchor),1,1),Anchor))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: 6caefb46-eabb-4e89-82eb-249e97bd4dcc
+
+	/// Shifts a single contiguous calendar-month window back one month. Blank across multiple or disjoint months to avoid misleading totals. A full month compares to the full preceding month.
+	measure 'Previous Month Sales' = VAR PeriodStartDate=MIN('Calendar'[Date]) VAR PeriodEndDate=MAX('Calendar'[Date]) VAR StartDate=EDATE(PeriodStartDate,-1) VAR EndDate=IF(PeriodEndDate=EOMONTH(PeriodEndDate,0),EOMONTH(PeriodEndDate,-1),EDATE(PeriodEndDate,-1)) VAR IsContinuous=COUNTROWS(VALUES('Calendar'[Date]))=DATEDIFF(PeriodStartDate,PeriodEndDate,DAY)+1 RETURN IF(IsContinuous&&YEAR(PeriodStartDate)=YEAR(PeriodEndDate)&&MONTH(PeriodStartDate)=MONTH(PeriodEndDate),CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],StartDate,EndDate)))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: 65a7569d-7d36-4365-866a-00cb40bb6bbf
+
+	/// Shifts a contiguous selected period back twelve months, preserving full month ends including leap years. Returns blank for disjoint date selections.
+	measure 'Previous Year Sales' = VAR PeriodStartDate=MIN('Calendar'[Date]) VAR PeriodEndDate=MAX('Calendar'[Date]) VAR IsContinuous=COUNTROWS(VALUES('Calendar'[Date]))=DATEDIFF(PeriodStartDate,PeriodEndDate,DAY)+1 VAR PriorStart=EDATE(PeriodStartDate,-12) VAR PriorEnd=IF(PeriodEndDate=EOMONTH(PeriodEndDate,0),EOMONTH(PeriodEndDate,-12),EDATE(PeriodEndDate,-12)) RETURN IF(IsContinuous,CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],PriorStart,PriorEnd)))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: 509c3e27-dbab-4fa3-ba05-ffd9c5b8394f
+
+	measure 'Month-over-Month Growth %' = DIVIDE([Total Revenue]-[Previous Month Sales],[Previous Month Sales])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: '04 Time Intelligence'
+		lineageTag: 741e7f24-dce7-4f53-a4f6-5375968bb107
+
+	measure 'Year-over-Year Growth %' = DIVIDE([Total Revenue]-[Previous Year Sales],[Previous Year Sales])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: '04 Time Intelligence'
+		lineageTag: ce8a7892-bba9-49a1-b69f-38be27d6701c
+
+	/// Current selected month through the selected date plus the two prior calendar months, capped at the latest source transaction date.
+	measure 'Rolling 3-Month Revenue' = VAR Anchor=MIN(MAX('Calendar'[Date]),[Last Available Order Date]) RETURN CALCULATE([Total Revenue],REMOVEFILTERS('Calendar'),DATESBETWEEN('Calendar'[Date],EOMONTH(Anchor,-3)+1,Anchor))
+		formatString: #,0.00
+		displayFolder: '04 Time Intelligence'
+		lineageTag: d1d21f3b-bb86-4bb8-9568-9b6c9cf32d22
+
+	/// Latest source transaction date; this is not a refresh timestamp.
+	measure 'Last Available Order Date' = CALCULATE(MAX('resturant_final'[order_date]),REMOVEFILTERS())
+		formatString: dd MMM yyyy
+		displayFolder: '99 Data Quality'
+		lineageTag: 4edb1933-8981-4d47-be04-3470162a04c6
+
+	/// Retained for review; no assumption that these are errors or refunds.
+	measure 'Negative Amount Transactions' = COALESCE(CALCULATE(COUNTROWS('resturant_final'),'resturant_final'[total_amount]<0),0)
+		formatString: #,0
+		displayFolder: '99 Data Quality'
+		lineageTag: 329e2a82-ce47-4a48-8b27-84f9bbaf7138
+
+	measure 'Negative Price Transactions' = COALESCE(CALCULATE(COUNTROWS('resturant_final'),'resturant_final'[price]<0),0)
+		formatString: #,0
+		displayFolder: '99 Data Quality'
+		lineageTag: 82c26fd7-277d-4b83-82c3-87cad96c0fd3
+
+	measure 'Menu Item Revenue Rank' = RANKX(ALLSELECTED('resturant_final'[item_name]),[Total Revenue],,DESC,Dense)
+		formatString: 0
+		isHidden
+		displayFolder: '99 Data Quality'
+		lineageTag: db1d9243-20ad-42ef-ab28-ee8b2e2fd8e7
+
+	measure 'Menu Item Quantity Rank' = RANKX(ALLSELECTED('resturant_final'[item_name]),[Total Quantity Sold],,DESC,Dense)
+		formatString: 0
+		isHidden
+		displayFolder: '99 Data Quality'
+		lineageTag: 9571687e-2b04-4cad-bc81-b4d6816478e4
+
+	/// Top ten menu items by revenue under current slicers; equal ranks may include ties.
+	measure 'Top 10 Menu Item Revenue' = IF([Menu Item Revenue Rank]<=10,[Total Revenue])
+		formatString: #,0.00
+		displayFolder: '01 Sales'
+		lineageTag: 11a14802-c022-444a-888d-4328d19feb07
+
+	measure 'Top 10 Menu Item Quantity' = IF([Menu Item Quantity Rank]<=10,[Total Quantity Sold])
+		formatString: #,0
+		displayFolder: '01 Sales'
+		lineageTag: 6341e188-5bfb-482a-8955-ab47f7685b20
+
+	column Value
+		dataType: int64
+		isHidden
+		lineageTag: 378677df-10d7-450b-bed7-990c36a39f25
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition _Measures = calculated
+		mode: import
+		source = { 0 }
+

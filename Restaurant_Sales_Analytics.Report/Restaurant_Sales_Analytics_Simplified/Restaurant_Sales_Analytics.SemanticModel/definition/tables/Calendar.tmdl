@@ -1,0 +1,124 @@
+/// Continuous full-year calendar. Weekend follows source flags: Friday, Saturday, Sunday.
+table Calendar
+	lineageTag: 1b37ce82-6a3c-44bc-9096-0c9c38c3c299
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-MM-dd
+		lineageTag: db3d60a9-adf8-4032-bd44-2bba9272cbb3
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 72cfce87-6120-4bbb-bae8-fef7fb06c3b7
+		summarizeBy: none
+		sourceColumn: [Year]
+
+	column Quarter
+		dataType: string
+		lineageTag: 6fd4f3d8-9070-4637-b571-299c6f981956
+		summarizeBy: none
+		sourceColumn: [Quarter]
+		sortByColumn: 'Quarter Number'
+
+	column 'Quarter Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 35fa4e6e-fd80-4558-af4e-5a283fdc935c
+		summarizeBy: none
+		sourceColumn: [Quarter Number]
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3adb6602-8855-4c02-b9ca-4cbb86cb0f3b
+		summarizeBy: none
+		sourceColumn: [Month Number]
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 8a760395-2ac8-4a07-9eb4-deae093e50e2
+		summarizeBy: none
+		sourceColumn: [Month Name]
+		sortByColumn: 'Month Number'
+
+	column Month-Year
+		dataType: string
+		lineageTag: 531c2318-d67c-467e-bfed-8345097cae51
+		summarizeBy: none
+		sourceColumn: [Month-Year]
+		sortByColumn: 'Year-Month Sort Key'
+
+	column 'Year-Month Sort Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7322e652-f7d9-460f-92c8-8b4c1574ed83
+		summarizeBy: none
+		sourceColumn: [Year-Month Sort Key]
+
+	column 'Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 46f62209-241d-4f38-a9de-7f4cc555f274
+		summarizeBy: none
+		sourceColumn: [Week Number]
+
+	column 'Day of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: afcefb70-3061-453f-9d36-c38e22150c59
+		summarizeBy: none
+		sourceColumn: [Day of Month]
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: a5691b79-79c5-4b7a-bbfd-6623ce71ec92
+		summarizeBy: none
+		sourceColumn: [Day Name]
+		sortByColumn: 'Day of Week Number'
+
+	column 'Day of Week Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 157e914f-1c3e-4b4f-b766-a114425fc53c
+		summarizeBy: none
+		sourceColumn: [Day of Week Number]
+
+	column 'Day Type'
+		dataType: string
+		lineageTag: 5264443a-153c-435e-bcd1-db92c48ed227
+		summarizeBy: none
+		sourceColumn: [Day Type]
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				VAR MinSourceDate = MIN('resturant_final'[order_date])
+				VAR MaxSourceDate = MAX('resturant_final'[order_date])
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(DATE(YEAR(MinSourceDate),1,1),DATE(YEAR(MaxSourceDate),12,31)),
+				    "Year",YEAR([Date]),
+				    "Quarter","Q" & QUARTER([Date]),
+				    "Quarter Number",QUARTER([Date]),
+				    "Month Number",MONTH([Date]),
+				    "Month Name",FORMAT([Date],"MMMM","en-US"),
+				    "Month-Year",FORMAT([Date],"MMM yyyy","en-US"),
+				    "Year-Month Sort Key",YEAR([Date])*100+MONTH([Date]),
+				    "Week Number",WEEKNUM([Date],21),
+				    "Day of Month",DAY([Date]),
+				    "Day Name",FORMAT([Date],"dddd","en-US"),
+				    "Day of Week Number",WEEKDAY([Date],2),
+				    "Day Type",IF(WEEKDAY([Date],2)>=5,"Weekend","Weekday")
+				)
+

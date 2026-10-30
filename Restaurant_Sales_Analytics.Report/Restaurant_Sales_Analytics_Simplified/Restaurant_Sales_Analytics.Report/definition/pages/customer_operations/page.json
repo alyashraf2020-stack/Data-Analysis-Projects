@@ -1,0 +1,578 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "customer_operations",
+  "displayName": "Customers & Operations",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#303052'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Restaurant Sales Dashboard Wallpaper.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Restaurant_Sales_Dashboard_Wal8864295390268621.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "co_s_year",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_year",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_month",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_branch",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_category",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_type",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_payment",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_s_date",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_customer_trend",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_payment",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_order_type",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_branch_detail",
+      "target": "co_satisfaction",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_frequency",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_spend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_rating",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_customer_trend",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_payment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_order_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "co_satisfaction",
+      "target": "co_branch_detail",
+      "type": "DataFilter"
+    }
+  ]
+}

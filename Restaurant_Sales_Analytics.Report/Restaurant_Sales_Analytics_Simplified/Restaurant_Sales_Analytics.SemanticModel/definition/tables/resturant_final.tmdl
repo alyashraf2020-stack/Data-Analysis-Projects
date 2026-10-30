@@ -1,0 +1,207 @@
+table resturant_final
+	lineageTag: 86dc60cd-6ad2-4759-8b61-f4c3ec9e4d97
+
+	column order_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4980adb8-ef7e-48f2-9a22-2be8e8d4a95d
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-MM-dd
+		sourceProviderType: datetime2
+		lineageTag: 45e49b36-5348-4a48-a5bd-c75aae49c46e
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2ffe4274-c25e-4a17-b23a-3c799982ef06
+		summarizeBy: none
+		sourceColumn: hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: bc8f882a-6776-4d3b-8fcb-1375e6b6c190
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5ae65693-58b9-45aa-b680-47df7de59768
+		summarizeBy: none
+		sourceColumn: item_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: e8f4b52d-5432-4365-a68b-ea609809224a
+		summarizeBy: none
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantity
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: cd925227-3cec-4cd2-9bcd-214c044250ee
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 83d2afc6-93d0-4f02-9cab-de1f0a75c16f
+		summarizeBy: none
+		sourceColumn: discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_amount
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: d23bb6b3-ff3d-49c9-9692-bbf40e3fe649
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column branch
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 610c4d92-0f11-4ed9-a0d7-43bbca6ad36e
+		summarizeBy: none
+		sourceColumn: branch
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8f086776-0e7a-4fd3-8141-2577d7b3d7c2
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_type
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0d5c07a0-5dcb-446b-92bb-7f58549051b8
+		summarizeBy: none
+		sourceColumn: order_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4c068bfb-5e0d-429f-8a49-1ba667c155a5
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 58921faa-ca35-40e3-b40b-2af268d2e7e3
+		summarizeBy: none
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4a0d65f3-d7e8-4a4c-b1e4-1a8ae14f5498
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d0820158-c1d9-4f30-8b84-30445a2fb7dd
+		summarizeBy: none
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 47de990b-7767-465b-b173-7122ea699007
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1a262689-9b94-4932-b5e4-a1994e053ccc
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition resturant_final = m
+		mode: directQuery
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs("dbc-ab6c882a-df0b.cloud.databricks.com", "/sql/1.0/warehouses/396e7f3e2e11e28f", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    workspace_Database = Source{[Name="workspace",Kind="Database"]}[Data],
+				    default_Schema = workspace_Database{[Name="default",Kind="Schema"]}[Data],
+				    resturant_final_Table = default_Schema{[Name="resturant_final",Kind="Table"]}[Data]
+				in
+				    resturant_final_Table
+
+	annotation PBI_ResultType = Table
+

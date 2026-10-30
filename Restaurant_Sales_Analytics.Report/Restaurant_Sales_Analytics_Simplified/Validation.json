@@ -1,0 +1,53 @@
+{
+  "tables": [
+    "resturant_final",
+    "Calendar",
+    "_Measures"
+  ],
+  "measures": 39,
+  "relationship": "Calendar[Date] (1) -> resturant_final[order_date] (*)",
+  "date_relationship_active": true,
+  "fact_mode": "DirectQuery",
+  "fact_source_unchanged": true,
+  "calendar_unchanged": true,
+  "measure_expressions_updated": [
+    "Menu Item Revenue Rank",
+    "Menu Item Quantity Rank"
+  ],
+  "other_measure_expressions_unchanged": 37,
+  "pages": 3,
+  "visuals": 75,
+  "visuals_with_updated_field_bindings": [
+    "co_branch_detail",
+    "co_order_type",
+    "co_payment",
+    "co_satisfaction",
+    "co_s_branch",
+    "co_s_category",
+    "co_s_payment",
+    "co_s_type",
+    "ov_branch_sales",
+    "ov_category_sales",
+    "ov_order_type",
+    "ov_s_branch",
+    "ov_s_category",
+    "ov_s_payment",
+    "ov_s_type",
+    "ov_top_items",
+    "sa_category_detail",
+    "sa_s_branch",
+    "sa_s_category",
+    "sa_s_payment",
+    "sa_s_type",
+    "sa_top_quantity"
+  ],
+  "synchronized_slicer_groups": 7,
+  "positions_sizes_types_and_container_styling_preserved": true,
+  "all_page_definitions_preserved": true,
+  "dependency_validation_passed_before_removal": true,
+  "field_bindings_checked": 107,
+  "report_schema_files": 85,
+  "source_project_unchanged": true,
+  "original_pbix_unchanged": true,
+  "desktop_loading_refresh_and_click_testing_performed": false
+}

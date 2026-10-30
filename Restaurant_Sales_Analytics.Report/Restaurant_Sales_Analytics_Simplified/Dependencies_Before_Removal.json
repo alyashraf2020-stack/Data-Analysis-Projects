@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "unwanted_table_dependencies": 0,
+  "errors": [],
+  "field_bindings_checked": 107,
+  "query_metadata_references_checked": 99,
+  "dax_qualified_column_references_checked": 36,
+  "measure_count": 39,
+  "report_schema_files_validated": 85,
+  "critical_chart_checks": [
+    {
+      "visual": "co_order_type",
+      "field": "resturant_final.order_type",
+      "valid": true
+    },
+    {
+      "visual": "ov_branch_sales",
+      "field": "resturant_final.branch",
+      "valid": true
+    },
+    {
+      "visual": "ov_category_sales",
+      "field": "resturant_final.category",
+      "valid": true
+    },
+    {
+      "visual": "ov_order_type",
+      "field": "resturant_final.order_type",
+      "valid": true
+    },
+    {
+      "visual": "ov_top_items",
+      "field": "resturant_final.item_name",
+      "valid": true
+    }
+  ],
+  "tables_removed_at_this_checkpoint": false
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "5fd61fa0346d17c426a8",
+    "e72b652a95c40b907013",
+    "sales_analysis",
+    "customer_operations"
+  ],
+  "activePageName": "5fd61fa0346d17c426a8"
+}
